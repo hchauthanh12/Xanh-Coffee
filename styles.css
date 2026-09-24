@@ -574,7 +574,8 @@ h1 {
   background: var(--cream);
 }
 
-.menu-layout {
+.menu-layout,
+.menu-showcase {
   display: grid;
   grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
   gap: 56px;
@@ -596,10 +597,77 @@ h1 {
   gap: 14px;
 }
 
+.menu-board {
+  position: sticky;
+  top: 112px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 18px 50px rgba(23, 33, 27, 0.1);
+}
+
+.menu-board img {
+  width: 100%;
+  height: auto;
+}
+
 .menu-card {
   min-height: 220px;
   padding: 26px;
   box-shadow: 0 14px 35px rgba(23, 33, 27, 0.07);
+}
+
+.featured-drinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.drink-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 0 14px 35px rgba(23, 33, 27, 0.07);
+}
+
+.drink-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.drink-card div {
+  padding: 20px;
+}
+
+.drink-card span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--clay);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.drink-card h3 {
+  color: var(--leaf);
+  font-size: 1.18rem;
+}
+
+.drink-card p {
+  min-height: 52px;
+  margin: 10px 0 16px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.drink-card strong {
+  color: var(--leaf);
+  font-size: 1.05rem;
 }
 
 .visit-section {
@@ -809,12 +877,14 @@ h1 {
   .intro-grid,
   .feature-grid,
   .menu-layout,
+  .menu-showcase,
   .visit-grid {
     grid-template-columns: 1fr;
     gap: 38px;
   }
 
-  .sticky-heading {
+  .sticky-heading,
+  .menu-board {
     position: static;
   }
 
@@ -823,6 +893,10 @@ h1 {
   }
 
   .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-drinks {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -929,6 +1003,24 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .featured-drinks {
+    grid-template-columns: 1fr;
+  }
+
+  .drink-card {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+  }
+
+  .drink-card img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .drink-card p {
+    min-height: 0;
+  }
+
   .contact-panel {
     padding: 24px;
   }
@@ -970,5 +1062,14 @@ h1 {
 
   .button {
     width: 100%;
+  }
+
+  .drink-card {
+    display: block;
+  }
+
+  .drink-card img {
+    aspect-ratio: 4 / 5;
+    height: auto;
   }
 }
